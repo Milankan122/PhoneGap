@@ -2,35 +2,89 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Refresh"
-        android:layout_margin="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <ListView
-        android:id="@+id/deviceList"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/btnRefresh"
-        app:layout_constraintBottom_toTopOf="@id/fragmentContainer"
+        android:layout_height="wrap_content"
+        android:text="PhoneGap — Version 1"
+        android:textSize="20sp"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnJoystick"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Joystick"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="12dp" />
+
+    <TextView
+        android:id="@+id/statusJoy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Not connected"
+        app:layout_constraintTop_toBottomOf="@id/btnJoystick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="12dp" />
+
+    <Button
+        android:id="@+id/btnDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="I2C Display"
+        app:layout_constraintTop_toBottomOf="@id/statusJoy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="12dp" />
+
+    <TextView
+        android:id="@+id/statusDisp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Not connected"
+        app:layout_constraintTop_toBottomOf="@id/btnDisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="12dp" />
+
+    <Button
+        android:id="@+id/btnNumpad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Numpad"
+        app:layout_constraintTop_toBottomOf="@id/statusDisp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="12dp" />
+
+    <TextView
+        android:id="@+id/statusNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Not connected"
+        app:layout_constraintTop_toBottomOf="@id/btnNumpad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="12dp" />
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/statusNum"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
